@@ -1,13 +1,13 @@
 var script = document.createElement("script");
-script.src="http://caue.local/~caue/jquery-1.4.2.min.js";
+script.src="http://caueguerra.github.com/time-expenses-js/jquery-1.4.2.min.js";
 document.body.appendChild(script);
 
 var script = document.createElement("script");
-script.src="http://caue.local/~caue/jquery.dateFormat.js";
+script.src="http://caueguerra.github.com/time-expenses-js/jquery.dateFormat.js";
 document.body.appendChild(script);
 
 script = document.createElement("script");
-script.src="http://caue.local/~caue/jquery.csv.js";
+script.src="http://caueguerra.github.com/time-expenses-js/jquery.csv.js";
 document.body.appendChild(script);
 
 
