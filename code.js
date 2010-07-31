@@ -8,15 +8,13 @@ $('#submit').click(function() {
 	// });
 	$(csv).each(function(index) {
 		$('#activities_0_items_' + (index + 4) + '_row').after(new_row(index + 5));
-		// row = csv[index];
+		row = csv[index];
 		// $('#activities_0_activity').val(row[5]);
-		// 
-		// $('#activities_0_items_' + index + '_item_date_string').val(Date.parseExact(row[0], "dd/MM/yyyy").toString('dd MMM yyyy'));
+		
+		$('#activities_0_items_' + index + '_item_date_string').val(Date.parseExact(row[0], "dd/MM/yyyy").toString('dd MMM yyyy'));
 		// $('#activities_0_items_' + index + '_amount').val();
 	});
 });
-
-$('')
 
 var new_row = function(index) {
 	return '<tr id="activities_0_items_' + index + '_row">' +
