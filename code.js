@@ -3,23 +3,19 @@ $('#content h1').after('<input type="submit" id="submit"/>')
 $('#submit').click(function() {
 	var data = document.getElementById('arquivo').files[0].getAsText('utf-8');
 	var csv = jQuery.csv()(data);
-	// csv.sort(function(a, b) {
-	// 	return (a[5] < b[5]) ? -1 : (a[5] > b[5]) ? 1 : 0
-	// });
 	$(csv).each(function(index) {
 		$('#activities_0_items_' + (index + 4) + '_row').after(new_row(index + 5));
 		row = csv[index];
 		$('#activities_0_items_' + index + '_activity').val(row[5]);
-		$('#activities_0_items_' + index + '_category').val(1);
+		$('#activities_0_items_' + index + '_category').replaceWith('<input type="text" id="activities_0_items_' + index + '_category" value="' + row[6] +'"/>')
 		$('#activities_0_items_' + index + '_item_date_string').val(Date.parseExact(row[0], "dd/MM/yyyy").toString('dd MMM yyyy'));
 		$('#activities_0_items_' + index + '_amount').val($.trim(row[1]));
 		// $('#activities_0_items_' + index + '_currency').val('AUD');
 		$('#activities_0_items_' + index + '_description').val(row[3]);
 		$('#activities_0_items_' + index + '_vendor').val(row[2]);
-		$('#activities_0_items_' + index + '_payment').val(1);
-		// $('#activities_0_items_' + index + '_attendees').val('caue');
-		// $('#activities_0_items_' + index + '_personal').val('row[5]');
+		$('#activities_0_items_' + index + '_payment').replaceWith('<input type="text" id="activities_0_items_' + index + '_payment" value="' + row[7] +'"/>')
 	});
+	$('#sub[value=Save as draft]').click();
 });
 
 var new_row = function(index) {
