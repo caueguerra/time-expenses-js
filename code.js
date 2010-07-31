@@ -7,16 +7,30 @@ $('#submit').click(function() {
 		$('#activities_0_items_' + (index + 4) + '_row').after(new_row(index + 5));
 		row = csv[index];
 		$('#activities_0_items_' + index + '_activity').val(row[5]);
-		$('#activities_0_items_' + index + '_category').replaceWith('<input type="text" id="activities_0_items_' + index + '_category" value="' + row[6] +'"/>')
+		$('#activities_0_items_' + index + '_category').selectOptions(row[6])
 		$('#activities_0_items_' + index + '_item_date_string').val(Date.parseExact(row[0], "dd/MM/yyyy").toString('dd MMM yyyy'));
 		$('#activities_0_items_' + index + '_amount').val($.trim(row[1]));
 		// $('#activities_0_items_' + index + '_currency').val('AUD');
 		$('#activities_0_items_' + index + '_description').val(row[3]);
 		$('#activities_0_items_' + index + '_vendor').val(row[2]);
-		$('#activities_0_items_' + index + '_payment').replaceWith('<input type="text" id="activities_0_items_' + index + '_payment" value="' + row[7] +'"/>')
+		$('#activities_0_items_' + index + '_payment').selectOptions(row[7]);
 	});
 	$('#sub[value=Save as draft]').click();
 });
+
+jQuery.fn.selectOptions = function(text) {
+	this.each(
+		function()	{
+			var optionsLength = this.options.length;
+			for(var i = 0; i<optionsLength; i++) {
+				if (this.options[i].text == text) {
+					this.options[i].selected = true;
+					return;
+				};
+			}
+		}
+	);
+}
 
 var new_row = function(index) {
 	return '<tr id="activities_0_items_' + index + '_row">' +
