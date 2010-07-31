@@ -12,7 +12,7 @@ $('#submit').click(function() {
 		$('#activities_0_items_index_activity').val(row[5]);
 		$('#activities_0_items_' + index + '_category').val(1);
 		$('#activities_0_items_' + index + '_item_date_string').val(Date.parseExact(row[0], "dd/MM/yyyy").toString('dd MMM yyyy'));
-		$('#activities_0_items_' + index + '_amount').val(row[1]);
+		$('#activities_0_items_' + index + '_amount').val($.trim(row[1]));
 		// $('#activities_0_items_' + index + '_currency').val('AUD');
 		$('#activities_0_items_' + index + '_description').val(row[3]);
 		$('#activities_0_items_' + index + '_vendor').val(row[2]);
