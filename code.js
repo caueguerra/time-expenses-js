@@ -7,7 +7,7 @@ $('#submit').click(function() {
 	// 	return (a[5] < b[5]) ? -1 : (a[5] > b[5]) ? 1 : 0
 	// });
 	$(csv).each(function(index) {
-		('#activities_0_items_' + (index + 4) + '_row').after(new_row(index + 5));
+		$('#activities_0_items_' + (index + 4) + '_row').after(new_row(index + 5));
 		row = csv[index];
 		$('#activities_0_activity').val(row[5]);
 		
