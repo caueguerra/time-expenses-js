@@ -8,10 +8,11 @@ $('#submit').click(function() {
 		row = csv[index];
 		$('#activities_0_items_' + index + '_activity').val(row[5]);
 		$('#activities_0_items_' + index + '_category').selectOptions(row[6]);
-		var date = Date.parseExact(row[0], "dd/MM/yyyy");
-		if (date == null) {
-			date = Date.parseExact(row[0], "d/MM/yy");
-		}
+		var date = Date.parse
+		// var date = Date.parseExact(row[0], "dd/MM/yyyy");
+		// if (date == null) {
+			// date = Date.parseExact(row[0], "d/MM/yy");
+		// }
 		$('#activities_0_items_' + index + '_item_date_string').val(date.toString('dd MMM yyyy'));
 		$('#activities_0_items_' + index + '_amount').val($.trim(row[1]));
 		// $('#activities_0_items_' + index + '_currency').val('AUD');
