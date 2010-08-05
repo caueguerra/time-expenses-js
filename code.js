@@ -8,7 +8,7 @@ $('#submit').click(function() {
 		row = csv[index];
 		$('#activities_0_items_' + index + '_activity').val(row[5]);
 		$('#activities_0_items_' + index + '_category').selectOptions(row[6]);
-		var date = Date.parse
+		var date = Date.parse(row[0]);
 		// var date = Date.parseExact(row[0], "dd/MM/yyyy");
 		// if (date == null) {
 			// date = Date.parseExact(row[0], "d/MM/yy");
