@@ -8,11 +8,7 @@ $('#submit').click(function() {
 		row = csv[index];
 		$('#activities_0_items_' + index + '_activity').val(row[5]);
 		$('#activities_0_items_' + index + '_category').selectOptions(row[6]);
-		
-		CultureInfo cultureInfo = new CultureInfo("en-au", true);
-		$('#activities_0_items_' + index + '_item_date_string').val(Date.parse(row[0]).toString('dd MMM yyyy'));
-		
-		// $('#activities_0_items_' + index + '_item_date_string').val(Date.parseExact(row[0], "dd/MM/yyyy").toString('dd MMM yyyy'));
+		$('#activities_0_items_' + index + '_item_date_string').val(Date.parseExact(row[0], "dd/MM/yyyy").toString('dd MMM yyyy'));
 		$('#activities_0_items_' + index + '_amount').val($.trim(row[1]));
 		// $('#activities_0_items_' + index + '_currency').val('AUD');
 		$('#activities_0_items_' + index + '_description').val(row[3]);
