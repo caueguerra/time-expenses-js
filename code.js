@@ -7,7 +7,7 @@ $('#submit').click(function() {
 		$('#activities_0_items_' + (index + 4) + '_row').after(new_row(index + 5));
 		row = csv[index];
 		$('#activities_0_items_' + index + '_activity').val(row[5]);
-		$('#activities_0_items_' + index + '_category').selectOptions(row[6])
+		$('#activities_0_items_' + index + '_category').selectOptions(row[6]);
 		
 		CultureInfo cultureInfo = new CultureInfo("en-au", true);
 		$('#activities_0_items_' + index + '_item_date_string').val(Date.parse(row[0]).toString('dd MMM yyyy'));
