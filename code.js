@@ -3,7 +3,7 @@ $('#content h1').after('<input type="submit" id="submit"/>')
 $('#submit').click(function() {
 	var data = document.getElementById('arquivo').files[0].getAsText('utf-8');
 	var csv = jQuery.csv()(data);
-	alert(csv[0]);
+	alert(csv[0].split('\n').length);
 	$(csv).each(function(index) {
 		$('#activities_0_items_' + (index + 4) + '_row').after(new_row(index + 5));
 		row = csv[index];
